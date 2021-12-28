@@ -13,6 +13,8 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @author yujiale
+ *
+ * 生产者判断消息是否发送到队列成功
  */
 public class WeatherBureau {
     public static void main(String[] args) throws IOException, TimeoutException {
@@ -26,11 +28,13 @@ public class WeatherBureau {
         area.put("china.hubei.wuhan.20201128", "中国湖北武汉20201128天气数据");
         area.put("china.henan.zhengzhou.20201128", "中国河南郑州20201128天气数据");
         area.put("us.cal.lsj.20201128", "美国加州洛杉矶20201128天气数据");
+        area.put("asda","湖北武哈");
 
         Connection connection = RabbitUtils.getConnection();
         Channel channel = connection.createChannel();
         //开启confirm监听模式
         channel.confirmSelect();
+        //确认
         channel.addConfirmListener(new ConfirmListener() {
             @Override
             public void handleAck(long l, boolean b) throws IOException {
@@ -43,6 +47,7 @@ public class WeatherBureau {
                 System.out.println("消息已被Broker拒收,Tag:" + l);
             }
         });
+        //返回
         channel.addReturnListener(new ReturnCallback() {
             @Override
             public void handle(Return r) {
@@ -62,7 +67,7 @@ public class WeatherBureau {
         }
 
         //如果关闭则无法进行监听，因此此处不需要关闭
-        /*channel.close();
+        /**channel.close();
         connection.close();*/
     }
 }
