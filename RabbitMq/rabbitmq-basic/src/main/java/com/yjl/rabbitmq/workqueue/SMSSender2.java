@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * @author yjl
- * 消费者
+ * 消费者02
  */
 public class SMSSender2 {
 

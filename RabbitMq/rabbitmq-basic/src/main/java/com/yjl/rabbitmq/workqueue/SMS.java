@@ -2,6 +2,8 @@ package com.yjl.rabbitmq.workqueue;
 
 /**
  * @author yjl
+ *
+ * 短信服务
  */
 public class SMS {
 
