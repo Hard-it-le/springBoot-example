@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author yjl
  * 消费者
  */
-public class BiaDu {
+public class BaiDu {
 
     public static void main(String[] args) throws IOException {
         Connection connection = RabbitUtils.getConnection();

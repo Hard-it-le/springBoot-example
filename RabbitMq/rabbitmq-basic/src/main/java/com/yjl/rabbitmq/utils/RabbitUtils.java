@@ -4,17 +4,22 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 
-
+/**
+ * @author yujiale
+ */
 public class RabbitUtils {
     private static ConnectionFactory connectionFactory = new ConnectionFactory();
+
     static {
-        connectionFactory.setHost("81.71.140.7");
-        connectionFactory.setPort(5672);//5672是RabbitMQ的默认端口号
-        connectionFactory.setUsername("bq123");
-        connectionFactory.setPassword("bq123");
-        connectionFactory.setVirtualHost("/baiqi");
+        connectionFactory.setHost("127.0.0.1");
+        //5672是RabbitMQ的默认端口号
+        connectionFactory.setPort(5672);
+        connectionFactory.setUsername("admin");
+        connectionFactory.setPassword("admin");
+        connectionFactory.setVirtualHost("/my_vhost");
     }
-    public static Connection getConnection(){
+
+    public static Connection getConnection() {
         Connection conn = null;
         try {
             conn = connectionFactory.newConnection();

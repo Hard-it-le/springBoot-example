@@ -16,7 +16,7 @@ public class Consumer {
 
 
         //获取TCP长连接
-         Connection conn = RabbitUtils.getConnection();
+        Connection conn = RabbitUtils.getConnection();
         //创建通信“通道”，相当于TCP中的虚拟连接
         Channel channel = conn.createChannel();
 
@@ -26,7 +26,7 @@ public class Consumer {
         //第三个参数：是否队列私有化，false则代表所有消费者都可以访问，true代表只有第一次拥有它的消费者才能一直使用，其他消费者不让访问
         //第四个：是否自动删除,false代表连接停掉后不自动删除掉这个队列
         //其他额外的参数, null
-        channel.queueDeclare(RabbitConstant.QUEUE_HELLOWORLD,false, false, false, null);
+        channel.queueDeclare(RabbitConstant.QUEUE_HELLOWORLD, false, false, false, null);
 
         //从MQ服务器中获取数据
 
@@ -41,10 +41,15 @@ public class Consumer {
 }
 
 
-class  Reciver extends DefaultConsumer {
+class Reciver extends DefaultConsumer {
 
     private Channel channel;
-    //重写构造函数,Channel通道对象需要从外层传入，在handleDelivery中要用到
+
+    /**
+     * 重写构造函数,Channel通道对象需要从外层传入，在handleDelivery中要用到
+     *
+     * @param channel
+     */
     public Reciver(Channel channel) {
         super(channel);
         this.channel = channel;
@@ -53,10 +58,10 @@ class  Reciver extends DefaultConsumer {
     @Override
     public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
 
-         String message = new String(body);
-         System.out.println("消费者接收到的消息："+message);
+        String message = new String(body);
+        System.out.println("消费者接收到的消息：" + message);
 
-         System.out.println("消息的TagId："+envelope.getDeliveryTag());
+        System.out.println("消息的TagId：" + envelope.getDeliveryTag());
         //false只确认签收当前的消息，设置为true的时候则代表签收该消费者所有未签收的消息
         channel.basicAck(envelope.getDeliveryTag(), false);
     }

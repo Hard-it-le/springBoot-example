@@ -29,7 +29,7 @@ public class Producer {
         //其他额外的参数, null
         channel.queueDeclare(RabbitConstant.QUEUE_HELLOWORLD,false, false, false, null);
 
-        String message = "hello白起666";
+        String message = "hello ranbbit 666";
         //四个参数
         //exchange 交换机，暂时用不到，在后面进行发布订阅时才会用到
         //队列名称

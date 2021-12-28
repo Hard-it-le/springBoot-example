@@ -7,6 +7,9 @@ import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
+/**
+ * @author yujiale
+ */
 public class Sina {
     public static void main(String[] args) throws IOException {
         Connection connection = RabbitUtils.getConnection();
