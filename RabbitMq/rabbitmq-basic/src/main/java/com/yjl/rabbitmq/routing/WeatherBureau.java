@@ -34,6 +34,7 @@ public class WeatherBureau {
         Channel channel = connection.createChannel();
 
         Iterator<Map.Entry<String, String>> itr = area.entrySet().iterator();
+        //迭代器循环
         while (itr.hasNext()) {
             Map.Entry<String, String> me = itr.next();
             //第一个参数交换机名字   第二个参数作为 消息的routing key
