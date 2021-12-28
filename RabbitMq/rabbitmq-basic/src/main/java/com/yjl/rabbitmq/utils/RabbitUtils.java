@@ -16,7 +16,7 @@ public class RabbitUtils {
         connectionFactory.setPort(5672);
         connectionFactory.setUsername("admin");
         connectionFactory.setPassword("admin");
-        connectionFactory.setVirtualHost("/my_vhost");
+        connectionFactory.setVirtualHost("my_vhost");
     }
 
     public static Connection getConnection() {
