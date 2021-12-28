@@ -12,8 +12,6 @@ import java.util.Scanner;
  * 发布者
  */
 public class WeatherBureau {
-
-
     public static void main(String[] args) throws Exception {
         Connection connection = RabbitUtils.getConnection();
         String input = new Scanner(System.in).next();
