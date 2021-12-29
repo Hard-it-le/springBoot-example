@@ -2,3 +2,5 @@
 /RabbitMq/rabbitmq-basic/target/
 /RabbitMq/spring-rabbitmq-consumers/target/
 /RabbitMq/spring-rabbitmq-producers/target/
+/RabbitMq/springboot-rabbitmq-producers/target/
+/RabbitMq/springboot-rabbitmq-consumers/target/
