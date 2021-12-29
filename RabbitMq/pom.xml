@@ -12,6 +12,9 @@
         <module>rabbitmq-basic</module>
         <module>spring-rabbitmq-consumers</module>
         <module>spring-rabbitmq-producers</module>
+        <module>rabbitmq-advanced</module>
+        <module>spring-rabbitmq-advanced-producers</module>
+        <module>spring-rabbitmq-advanced-consumers</module>
 
     </modules>
 
