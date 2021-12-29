@@ -1,8 +1,8 @@
-package com.yjl.rabbit.messageReliability;
+package com.yjl.rabbit.PublisherConfirms;
 
-import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
+import com.yjl.rabbit.utils.RabbitConstant;
 import com.yjl.rabbit.utils.RabbitUtils;
 
 import java.io.IOException;
@@ -14,24 +14,23 @@ import java.util.concurrent.TimeoutException;
  * @created: 2021/12/29
  * <p>
  * 消息可靠性之生产者
- *
+ * <p>
  * 单独一条进行发送消息同步等待确认
  */
-public class Producers01 {
-
-
+public class PublisherConfirmsProducers01 {
     public static void main(String[] args) throws IOException, TimeoutException {
+
         //创建长连接
         Connection connection = RabbitUtils.getConnection();
 
         //创建信道
         Channel channel = connection.createChannel();
         //向rabbitmq服务器发送amqp命令，将当前channel标记为发送方确认通道
-        AMQP.Confirm.SelectOk selectOk = channel.confirmSelect();
+        channel.confirmSelect();
 
-        channel.queueDeclare("queue.pc", true, false, false, null);
-        channel.exchangeDeclare("ex.pc", "direct", true, false, null);
-        channel.queueBind("queue.pc", "ex.pc", "key.pc");
+        channel.queueDeclare(RabbitConstant.QUEUE_NAME_PC, true, false, false, null);
+        channel.exchangeDeclare(RabbitConstant.EXCHANGE_NAME_PC, "direct", true, false, null);
+        channel.queueBind(RabbitConstant.QUEUE_NAME_PC, RabbitConstant.EXCHANGE_NAME_PC, RabbitConstant.ROUTING_KEY_NAME_PC);
 
         //发送消息
         String message = "hello";
