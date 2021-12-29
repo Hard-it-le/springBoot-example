@@ -9,22 +9,24 @@
        https://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/rabbit
        http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
-    <!--加载配置文件-->
+    <!--加载rabbitmq配置文件-->
     <context:property-placeholder location="classpath:rabbitmq.properties"/>
 
-    <!-- 定义rabbitmq connectionFactory -->
+    <!-- 定义rabbitmq connectionFactory 连接-->
     <rabbit:connection-factory id="connectionFactory" host="${rabbitmq.host}"
                                port="${rabbitmq.port}"
                                username="${rabbitmq.username}"
                                password="${rabbitmq.password}"
                                virtual-host="${rabbitmq.virtual-host}"/>
 
-    <bean id="springQueueListener" class="com.baiqi.rabbitmq.listener.SpringQueueListener"/>
-    <bean id="fanoutListener1" class="com.baiqi.rabbitmq.listener.FanoutListener"/>
-    <!-- <bean id="fanoutListener2" class="com.baiqi.rabbitmq.listener.FanoutListener2"/>
-    <bean id="topicListenerStar" class="com.baiqi.rabbitmq.listener.TopicListenerStar"/>
-    <bean id="topicListenerWell" class="com.baiqi.rabbitmq.listener.TopicListenerWell"/>
-    <bean id="topicListenerWell2" class="com.baiqi.rabbitmq.listener.TopicListenerWell2"/>
+    <!-- 定义消费者的队列监听器-->
+    <bean id="springQueueListener" class="com.yjl.rabbitmq.listener.SpringQueueListener"/>
+    <!-- 定义消费者的交换机监听器-->
+    <bean id="fanoutListener1" class="com.yjl.rabbitmq.listener.FanoutListener"/>
+    <!-- <bean id="fanoutListener2" class="com.yjl.rabbitmq.listener.FanoutListener2"/>
+    <bean id="topicListenerStar" class="com.yjl.rabbitmq.listener.TopicListenerStar"/>
+    <bean id="topicListenerWell" class="com.yjl.rabbitmq.listener.TopicListenerWell"/>
+    <bean id="topicListenerWell2" class="com.yjl.rabbitmq.listener.TopicListenerWell2"/>
 -->
     <rabbit:listener-container connection-factory="connectionFactory" auto-declare="true">
        <rabbit:listener ref="springQueueListener" queue-names="spring_queue"/>

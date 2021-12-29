@@ -1,4 +1,4 @@
-package com.baiqi;
+package com.yjl;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,6 +49,6 @@ public class ProducerTest {
     public void testTopics(){
         //2.发送消息
 
-        rabbitTemplate.convertAndSend("spring_topic_exchange","baiqi.hehe.haha","spring topic....");
+        rabbitTemplate.convertAndSend("spring_topic_exchange","yjl.hehe.haha","spring topic....");
     }
 }

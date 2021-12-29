@@ -1,4 +1,4 @@
-package com.baiqi.rabbitmq.listener;
+package com.yjl.rabbitmq.listener;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageListener;
@@ -6,7 +6,7 @@ import org.springframework.amqp.core.MessageListener;
 /**
  * @author yujiale
  */
-public class SpringQueueListener implements MessageListener {
+public class FanoutListener implements MessageListener {
     @Override
     public void onMessage(Message message) {
         //打印消息

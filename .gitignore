@@ -1,2 +1,4 @@
 /RocketMq/src/test/
 /RabbitMq/rabbitmq-basic/target/
+/RabbitMq/spring-rabbitmq-consumers/target/
+/RabbitMq/spring-rabbitmq-producers/target/
