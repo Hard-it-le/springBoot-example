@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * <p>
  * 注意这个模式会有优先匹配原则。例如发送routingKey=hunan.IT,那匹配到hunan.*(hunan.IT,hunan.eco),之后就不会再去匹配*.ITd
  */
-@Component
+@Component(value = "topic")
 public class TopicListener {
 
     @RabbitListener(queues = "topic01.queue")

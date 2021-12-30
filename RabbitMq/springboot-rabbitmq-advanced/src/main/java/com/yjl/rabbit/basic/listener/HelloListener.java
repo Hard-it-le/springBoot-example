@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @author: yjl
  * @created: 2021/12/30
  */
-@Component
+@Component(value = "hello")
 public class HelloListener {
 
     /**

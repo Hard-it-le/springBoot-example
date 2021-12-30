@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * <p>
  * pub/sub模式进行消息监听
  */
-@Component
+@Component(value = "pubSub")
 public class PubSubListener {
 
     @RabbitListener(queues = "pub.queue01")
