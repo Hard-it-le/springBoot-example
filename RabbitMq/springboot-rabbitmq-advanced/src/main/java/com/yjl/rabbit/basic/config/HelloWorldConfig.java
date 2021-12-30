@@ -1,7 +1,5 @@
 package com.yjl.rabbit.basic.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,34 +24,34 @@ public class HelloWorldConfig {
      */
     @Bean
     public Queue HelloQueue() {
-        return new Queue("hello.queue");
+        return new Queue("hello.queue", false, false, false, null);
     }
 
-    /**
-     * 设置交换机
-     *
-     * @return
-     */
-    @Bean
-    public DirectExchange HelloExchange() {
-        return new DirectExchange("hello.ex", false, false, null);
-    }
-
-    @Bean
-    public Binding HelloBinding() {
-        /**
-         * destination:绑定的目的地
-         * destinationType:绑定的类型,到交换器还是到队列
-         * exchange:交换器名称
-         * routingKey:路由key
-         * arguments：绑定的属性
-         */
-        return new Binding(
-                "hello.queue",
-                Binding.DestinationType.QUEUE,
-                "hello.ex",
-                "hello.key",
-                null);
-    }
+//    /**
+//     * 设置交换机
+//     *
+//     * @return
+//     */
+//    @Bean
+//    public DirectExchange HelloExchange() {
+//        return new DirectExchange("hello.ex", false, false, null);
+//    }
+//
+//    @Bean
+//    public Binding HelloBinding() {
+//        /**
+//         * destination:绑定的目的地
+//         * destinationType:绑定的类型,到交换器还是到队列
+//         * exchange:交换器名称
+//         * routingKey:路由key
+//         * arguments：绑定的属性
+//         */
+//        return new Binding(
+//                "hello.queue",
+//                Binding.DestinationType.QUEUE,
+//                "hello.ex",
+//                "hello.key",
+//                null);
+//    }
 
 }

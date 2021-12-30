@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 
 /**
  * @program: springboot-example
@@ -23,13 +24,11 @@ public class WorkTest {
 
 
     @Test
-    public void testSendMessage() {
+    public void testSendMessage() throws UnsupportedEncodingException {
         String message = "hello-";
         for (int i = 0; i < 20; i++) {
-            message = message + 1;
-
-            rabbitTemplate.convertAndSend("work.queue",
-                     message.getBytes());
+            rabbitTemplate.convertAndSend("", "work.queue",
+                    (message + i).getBytes("utf-8"));
         }
         System.out.println("发送成功");
     }
