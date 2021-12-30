@@ -8,9 +8,9 @@ spring:
     virtual-host: my_vhost
 
     # 消费端可靠性之发布者确认类型
-    publisher-confirm-type: correlated
+    #publisher-confirm-type: correlated
     # 消费端可靠性之发布者是否返回
-    publisher-returns: true
+    #publisher-returns: true
 
 
   application:
