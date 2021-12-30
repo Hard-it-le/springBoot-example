@@ -30,7 +30,7 @@ public class ConsumerAckConfig {
     }
 
     @Bean
-    public Binding PersistentBinding() {
+    public Binding AckBinding() {
         return BindingBuilder
                 .bind(AckQueue())
                 .to(AckExchange())

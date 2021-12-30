@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @program: springboot-example
  * @author: yjl
  * @created: 2021/12/30
- *
+ * <p>
  * 消息持久化
  */
 @Configuration

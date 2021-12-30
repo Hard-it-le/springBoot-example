@@ -16,7 +16,7 @@ spring:
     listener:
       simple:
         # ack模式监听消费者消息是否确认 auto：自动确认,manual:手动 none：拒接接收
-        acknowledge-mode: auto
+        # acknowledge-mode: auto
         #acknowledge-mode: manual 手动
         #acknowledge-mode: none 拒绝
         #acknowledge-mode: auto 自动
