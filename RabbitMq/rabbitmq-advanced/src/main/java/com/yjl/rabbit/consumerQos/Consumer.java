@@ -27,7 +27,6 @@ public class Consumer {
         channel.basicQos(1000, 10, true);
 
         channel.basicConsume("queue.qos", false, new DefaultConsumer(channel) {
-
             @Override
             public void handleDelivery(String consumerTag,
                                        Envelope envelope,
