@@ -1,4 +1,4 @@
-package com.yjl.rabbit.PublisherConfirms;
+package com.yjl.rabbit.publisherConfirms;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.ConfirmCallback;
