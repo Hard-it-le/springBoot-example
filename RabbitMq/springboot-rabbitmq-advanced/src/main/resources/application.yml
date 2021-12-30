@@ -12,6 +12,11 @@ spring:
     # 消费端可靠性之发布者是否返回
     #publisher-returns: true
 
+    # 监听消费者消息是否确认 auto：自动确认,manual:手动 none：拒接接收
+    listener:
+      simple:
+        acknowledge-mode: auto
+
 
   application:
     name: springboot-rabbitmq
