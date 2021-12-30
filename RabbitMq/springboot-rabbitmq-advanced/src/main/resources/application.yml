@@ -15,11 +15,21 @@ spring:
     # 监听消费者消息是否确认 auto：自动确认,manual:手动 none：拒接接收
     listener:
       simple:
-        # 监听消费者消息是否确认 auto：自动确认,manual:手动 none：拒接接收
+        # ack模式监听消费者消息是否确认 auto：自动确认,manual:手动 none：拒接接收
         acknowledge-mode: auto
         #acknowledge-mode: manual 手动
         #acknowledge-mode: none 拒绝
         #acknowledge-mode: auto 自动
+        retry:
+          #最大重试次数
+          max-attempts: 5
+          max-interval: 10000
+          #是否开启消费者重试（为false时关闭消费者重试,意思不是“不重试”，而是一直收到消息直到jack确认或者一直到超时）
+          enabled: true
+          #重试间隔时间（单位毫秒）
+          initial-interval: 5000
+          #重试超过最大次数后是否拒绝
+        default-requeue-rejected: false
 
 
   application:
