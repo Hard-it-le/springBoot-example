@@ -2,22 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>RocketMq</artifactId>
+        <groupId>com.yjl.rocketmq</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yjl.rocketmq</groupId>
-    <artifactId>RocketMq</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>spring-rocketmq-producer-consumer</module>
-        <module>springboot-rocketmq-consumer</module>
-        <module>springboot-rocketmq-produer</module>
-        <module>rocketmq-basic</module>
-    </modules>
+    <artifactId>rocketmq-basic</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.9.2</version>
+        </dependency>
+    </dependencies>
 
 </project>
