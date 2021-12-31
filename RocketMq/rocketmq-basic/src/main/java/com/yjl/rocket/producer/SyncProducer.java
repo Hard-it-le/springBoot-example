@@ -16,6 +16,8 @@ import java.io.UnsupportedEncodingException;
  * @created: 2021/12/31
  * <p>
  * 同步发送消息
+ *
+ * 同步传输广泛应用于大量场景，如重要通知消息、短信通知、短信营销系统等。
  */
 public class SyncProducer {
 
