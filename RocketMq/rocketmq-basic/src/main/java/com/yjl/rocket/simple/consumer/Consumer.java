@@ -21,6 +21,15 @@ import java.util.Set;
  * 3、流量控制
  * 4、并发线程的设置
  * 5、消息的过滤（Tag、key）
+ * <p>
+ * <p>
+ * 如何提高consumer的处理能力
+ * 1、提高消费并行度
+ * 1.1、在同一个consumerGroup下，可以通过增加consumer示例的数量来提升并行度
+ * 1.2、通过提高单个Consumer实例中的并行处理的线程数，可以在同一个Consumer内增加并行度来提高
+ * 2、以批量方式进行消费
+ * 2.1、通过批量方式消费来提高消费的吞吐量。实现方法是设置Consumer的consumeMessageBatchMaxSize这个参数，默认是1，如果设置为N，在消息多的时候每次收到的是个长度为N的消息链
+ * 3、检测延时情况，跳过非重要消息
  */
 public class Consumer {
     public static void main(String[] args) throws InterruptedException, RemotingException, MQClientException, MQBrokerException {
