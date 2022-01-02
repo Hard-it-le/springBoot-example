@@ -15,7 +15,7 @@ import java.util.Set;
  * @author: yjl
  * @created: 2021/12/31
  */
-public class PullConsumer {
+public class Consumer {
     public static void main(String[] args) throws InterruptedException, RemotingException, MQClientException, MQBrokerException {
         // 消息的拉取
         DefaultMQPullConsumer pullConsumer = new DefaultMQPullConsumer();

@@ -23,7 +23,15 @@ public class BroadcastPushConsumer {
 
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);
 
+        //消息的模式：广播
         consumer.setMessageModel(MessageModel.BROADCASTING);
+
+        //消息的模式：集群（默认集群）
+        consumer.setMessageModel(MessageModel.CLUSTERING);
+
+        //设置消费者的线程数
+        consumer.setConsumeThreadMin(1);
+        consumer.setConsumeThreadMax(10);
 
         consumer.subscribe("TopicTest", "*");
 
