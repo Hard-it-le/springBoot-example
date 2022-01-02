@@ -12,7 +12,7 @@ import org.apache.rocketmq.remoting.exception.RemotingException;
  * @author: yjl
  * @created: 2021/12/31
  */
-class ProducerTagProperties {
+ public class ProducerTagProperties {
     public static void main(String[] args) throws MQClientException, RemotingException, InterruptedException {
 
         DefaultMQProducer producer = new DefaultMQProducer("producer_grp_06");

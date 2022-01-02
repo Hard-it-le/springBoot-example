@@ -25,9 +25,11 @@ public class AsyncProducer {
         DefaultMQProducer defaultMQProducer = new DefaultMQProducer("");
         defaultMQProducer.setNamesrvAddr("127.0.0.1");
         defaultMQProducer.start();
+        //消息重试次数
         defaultMQProducer.setRetryTimesWhenSendAsyncFailed(0);
 
         int messageCount = 100;
+        //由于是异步发送，这里引入一个countDownLatch，保证所有Producer发送消息的回调方法都执行完了再停止Producer服务。
         final CountDownLatch countDownLatch = new CountDownLatch(messageCount);
         //循环发送消息次数
         for (int i = 0; i < messageCount; i++) {
