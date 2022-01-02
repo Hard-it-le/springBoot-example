@@ -27,6 +27,16 @@ import org.apache.rocketmq.remoting.exception.RemotingException;
  * 3、设置发送失败重试次数，当网络异常时候，如果想保证不丢消息，重试次数尽量设置多
  * 4、设置nameserver地址
  * 5、消息的组装和发送
+ *
+ *
+ * 发送一条消息经过三步
+ * 1、客户端发送请求到服务器
+ * 2、服务器处理请求
+ * 3、服务器想客户端返回应答
+ *
+ * 如何提升写入性能
+ * 1、采用oneWay方式发送
+ * 2、增加producer的并发量（使用多个producer同时发送）
  */
 public class SyncProducer {
 
