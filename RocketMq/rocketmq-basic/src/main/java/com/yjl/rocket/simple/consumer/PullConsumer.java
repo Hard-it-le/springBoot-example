@@ -1,4 +1,4 @@
-package com.yjl.rocket.consumer;
+package com.yjl.rocket.simple.consumer;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPullConsumer;
 import org.apache.rocketmq.client.consumer.PullResult;

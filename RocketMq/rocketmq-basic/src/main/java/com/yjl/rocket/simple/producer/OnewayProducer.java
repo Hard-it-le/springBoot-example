@@ -1,4 +1,4 @@
-package com.yjl.rocket.producer;
+package com.yjl.rocket.simple.producer;
 
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

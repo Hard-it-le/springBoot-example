@@ -1,4 +1,4 @@
-package com.yjl.rocket.producer;
+package com.yjl.rocket.broadcast;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;

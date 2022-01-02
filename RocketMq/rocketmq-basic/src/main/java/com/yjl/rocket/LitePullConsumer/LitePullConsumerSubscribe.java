@@ -1,4 +1,4 @@
-package com.yjl.rocket.consumer;
+package com.yjl.rocket.LitePullConsumer;
 
 import org.apache.rocketmq.client.consumer.DefaultLitePullConsumer;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;

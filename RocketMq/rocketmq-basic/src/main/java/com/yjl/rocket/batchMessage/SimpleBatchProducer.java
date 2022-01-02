@@ -1,4 +1,4 @@
-package com.yjl.rocket.producer;
+package com.yjl.rocket.batchMessage;
 
 import org.apache.rocketmq.client.exception.MQBrokerException;
 import org.apache.rocketmq.client.exception.MQClientException;
