@@ -41,14 +41,12 @@ public class Consumer {
         // 消费的模式：广播
         pullConsumer.setMessageModel(MessageModel.BROADCASTING);
 
-
         final Set<MessageQueue> messageQueues = pullConsumer.fetchSubscribeMessageQueues("tp_demo_05");
 
         for (MessageQueue messageQueue : messageQueues) {
             // 指定消息队列，指定标签过滤的表达式，消息偏移量和单次最大拉取的消息个数
             pullConsumer.pull(messageQueue, "TagA||TagB", 0L, 100);
         }
-
 
         // 消息的推送
         DefaultMQPushConsumer pushConsumer = new DefaultMQPushConsumer();
