@@ -21,3 +21,6 @@
 /Swagger/.mvn/
 /Swagger/mvnw
 /Swagger/mvnw.cmd
+/Log/log4j/.mvn/
+/Log/log4j/mvnw
+/Log/log4j/mvnw.cmd
