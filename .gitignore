@@ -18,3 +18,6 @@
 /Log/slf4j/.mvn/
 /Log/slf4j/mvnw
 /Log/slf4j/mvnw.cmd
+/Swagger/.mvn/
+/Swagger/mvnw
+/Swagger/mvnw.cmd
