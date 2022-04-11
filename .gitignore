@@ -24,3 +24,6 @@
 /Log/log4j/.mvn/
 /Log/log4j/mvnw
 /Log/log4j/mvnw.cmd
+/Log/aop/.mvn/
+/Log/aop/mvnw
+/Log/aop/mvnw.cmd
