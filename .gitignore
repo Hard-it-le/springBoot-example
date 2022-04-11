@@ -15,3 +15,6 @@
 /Json/fastjson-demo/mvnw
 /Json/fastjson-demo/mvnw.cmd
 /Json/fastjson-demo/.mvn/
+/Log/slf4j/.mvn/
+/Log/slf4j/mvnw
+/Log/slf4j/mvnw.cmd

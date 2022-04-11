@@ -1,0 +1,8 @@
+server:
+  port: 18081
+  application:
+    name: slf4j
+logging:
+  config: classpath:logback.xml
+  level:
+    com.yjl.slf4j.controller: info
