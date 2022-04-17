@@ -1,5 +1,6 @@
 package com.yjl.basic;
 
+import com.yjl.basic.config.MyProperties;
 import com.yjl.basic.controller.TestController;
 import com.yjl.basic.entity.Person;
 import com.yjl.basic.entity.Student;
@@ -42,6 +43,14 @@ class BasicApplicationTests {
     @Test
     public void testValuesLoad() {
         System.out.println(student);
+    }
+
+    @Resource
+    public MyProperties properties;
+
+    @Test
+    public void testMyProperties() {
+        System.out.println(properties);
     }
 
 
