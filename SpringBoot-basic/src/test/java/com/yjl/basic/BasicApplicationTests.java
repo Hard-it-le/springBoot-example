@@ -1,6 +1,8 @@
 package com.yjl.basic;
 
 import com.yjl.basic.controller.TestController;
+import com.yjl.basic.entity.Person;
+import com.yjl.basic.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +21,9 @@ class BasicApplicationTests {
     @Resource
     public TestController testController;
 
+    @Resource
+    public Person person;
+
 
     @Test
     void contextLoads() {
@@ -30,5 +35,14 @@ class BasicApplicationTests {
         String s = testController.testDemo();
         System.out.println(s);
     }
+
+    @Resource
+    public Student student;
+
+    @Test
+    public void testValuesLoad() {
+        System.out.println(student);
+    }
+
 
 }
