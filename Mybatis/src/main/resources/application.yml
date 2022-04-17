@@ -1,0 +1,17 @@
+server:
+  port: 18018
+
+spring:
+  application:
+    name: springboot-mybatis
+
+  datasource:
+    username: root
+    password: dockerroot
+    url: jdbc:mysql://127.0.0.1:13306/nacos?serverTimezone=UTC&characterEncoding=UTF-8
+    type: com.mysql.cj.jdbc.MysqlDataSource
+
+#开启驼峰命名匹配映射
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
