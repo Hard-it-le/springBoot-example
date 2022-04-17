@@ -57,6 +57,11 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
+        <!--引入热部署依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
