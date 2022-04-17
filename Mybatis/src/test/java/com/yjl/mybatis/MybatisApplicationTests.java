@@ -24,4 +24,10 @@ class MybatisApplicationTests {
     public void mybatisTestAnnotation() {
         userController.selectUserByUsername("nacos");
     }
+
+
+    @Test
+    public void mybatisTestXml() {
+        userController.selectUserByOne();
+    }
 }

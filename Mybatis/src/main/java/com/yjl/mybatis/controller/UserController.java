@@ -23,4 +23,9 @@ public class UserController {
     public void selectUserByUsername(String username) {
         userService.selectUserByUsername(username);
     }
+
+    @RequestMapping("/selectUserByOne")
+    public void selectUserByOne(){
+        userService.selectUserByOne();
+    }
 }

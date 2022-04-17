@@ -19,4 +19,11 @@ public interface UserMapper {
      */
     @Select("select * from users where username = #{username}")
     User selectUserByUsername(String username);
+
+
+    /**
+     * 查看一条信息
+     * @return
+     */
+    User selectUser();
 }

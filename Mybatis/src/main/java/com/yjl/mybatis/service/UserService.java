@@ -12,4 +12,9 @@ public interface UserService {
      * @param username
      */
     void selectUserByUsername(String username);
+
+    /**
+     * 查询一条用户信息
+     */
+    void selectUserByOne();
 }
