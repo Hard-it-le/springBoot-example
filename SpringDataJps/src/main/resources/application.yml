@@ -1,0 +1,19 @@
+server:
+  port: 18081
+
+spring:
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    username: root
+    password: dockerroot
+    url: jdbc:mysql://127.0.0.1:13306/sp_blog?serverTimezone=UTC&characterEncoding=UTF-8
+  jpa:
+    show-sql: true
+    database: mysql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+  application:
+    name: jpa
