@@ -2,7 +2,7 @@ package com.yjl.rabbitmq.workqueue;
 
 import com.yjl.rabbitmq.utils.RabbitConstant;
 import com.yjl.rabbitmq.utils.RabbitUtils;
-import com.rabbitmq.client.*;
+
 
 import java.io.IOException;
 

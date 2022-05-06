@@ -1,6 +1,11 @@
 package com.yjl.rabbit.consumerQos;
 
-import com.rabbitmq.client.*;
+
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.DefaultConsumer;
+import com.rabbitmq.client.Envelope;
 import com.yjl.rabbit.utils.RabbitUtils;
 
 import java.io.IOException;

@@ -1,9 +1,13 @@
 package com.yjl.rabbitmq.confirm;
 
 
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.ConfirmListener;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.Return;
+import com.rabbitmq.client.ReturnCallback;
 import com.yjl.rabbitmq.utils.RabbitConstant;
 import com.yjl.rabbitmq.utils.RabbitUtils;
-import com.rabbitmq.client.*;
 
 import java.io.IOException;
 import java.util.Iterator;
