@@ -1,6 +1,8 @@
 package com.yjl.rabbit.consumerAck;
 
-import com.rabbitmq.client.*;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
 import com.yjl.rabbit.utils.RabbitUtils;
 
 import java.io.IOException;
