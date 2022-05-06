@@ -6,7 +6,11 @@
 
     <groupId>com.yjl.kafka</groupId>
     <artifactId>Kafka</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>kafka-producer-consumer</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
