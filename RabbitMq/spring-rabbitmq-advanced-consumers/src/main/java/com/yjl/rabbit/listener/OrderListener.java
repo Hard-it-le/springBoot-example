@@ -6,6 +6,9 @@ import org.springframework.amqp.rabbit.listener.api.ChannelAwareMessageListener;
 import org.springframework.stereotype.Component;
 
 
+/**
+ * @author yujiale
+ */
 @Component
 public class OrderListener implements ChannelAwareMessageListener {
 
