@@ -48,3 +48,5 @@
 /Drools/springboot-drools/springboot-drools/.mvn/
 /.gradle/
 /.idea/
+/Drools/springboot-drools/mvnw
+/Drools/springboot-drools/mvnw.cmd
