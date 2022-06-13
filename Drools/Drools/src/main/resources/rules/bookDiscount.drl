@@ -1,0 +1,44 @@
+# 图书优惠规则
+package  book.discount
+
+import com.yjl.droolDemo.entity.Order
+
+
+## 规则一  购买图书总价在 100 元以下没有优惠
+rule "book_discount_1"
+    when
+        $order:Order(originalPrice < 100)
+    then
+        $order.setRealPrice($order.getOriginalPrice());
+
+        System.out.println("book_discount_1");
+end
+
+## 规则二，购买图书总价在 200 以下 ，优惠 20 元
+rule "book_discount_2"
+    when
+        $order:Order(originalPrice < 200 && originalPrice >= 100)
+    then
+        $order.setRealPrice($order.getOriginalPrice() - 20);
+        System.out.println("book_discount_2");
+end
+
+## 规则三 购买图书总价在 300 以下，优惠 50 元
+rule "book_discount_3"
+    when
+        $order:Order(originalPrice < 300 && originalPrice >=200)
+    then
+        $order.setRealPrice($order.getOriginalPrice() - 50);
+        System.out.println("book_discount_3");
+end
+
+
+
+## 规则四 购买图书总价在 400 以上，优惠 100
+rule "book_discount_4"
+    when
+        $order:Order( originalPrice >=300)
+    then
+        $order.setRealPrice($order.getOriginalPrice() - 100);
+        System.out.println("book_discount_4");
+end

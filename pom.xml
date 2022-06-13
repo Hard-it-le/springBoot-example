@@ -11,6 +11,7 @@
     <modules>
         <module>Json</module>
         <module>log</module>
+        <module>Drools/Drools</module>
     </modules>
 
     <properties>

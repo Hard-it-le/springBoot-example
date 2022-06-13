@@ -40,3 +40,6 @@
 /Redis/mvnw
 /Redis/mvnw.cmd
 /Kafka/kafka-producer-consumer/target/
+/Drools/Drools/target/
+/Drools.iml
+/springboot-example.iml
