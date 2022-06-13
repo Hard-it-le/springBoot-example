@@ -1,44 +1,42 @@
-# 图书优惠规则
-package  book.discount
+package book.discount
+import com.itheima.drools.entity.Order
 
-import com.yjl.droolDemo.entity.Order
+/*
+    这是一个多行注释
+*/
 
-
-## 规则一  购买图书总价在 100 元以下没有优惠
+//所购图书总价在100元以下的没有优惠
 rule "book_discount_1"
     when
-        $order:Order(originalPrice < 100)
+        $order:Order(originalPrice < 100) //模式匹配，到规则引擎中（工作内存）查找Order对象
     then
         $order.setRealPrice($order.getOriginalPrice());
-
-        System.out.println("book_discount_1");
+        System.out.println("成功匹配到规则一");
 end
 
-## 规则二，购买图书总价在 200 以下 ，优惠 20 元
+//所购图书总价在100到200元的优惠20元
 rule "book_discount_2"
     when
-        $order:Order(originalPrice < 200 && originalPrice >= 100)
+        $order:Order(originalPrice >= 100 && originalPrice < 200) //模式匹配，到规则引擎中（工作内存）查找Order对象
     then
         $order.setRealPrice($order.getOriginalPrice() - 20);
-        System.out.println("book_discount_2");
+        System.out.println("成功匹配到规则二");
 end
 
-## 规则三 购买图书总价在 300 以下，优惠 50 元
+//所购图书总价在200到300元的优惠50元
 rule "book_discount_3"
     when
-        $order:Order(originalPrice < 300 && originalPrice >=200)
+        $order:Order(originalPrice >= 200 && originalPrice < 300) //模式匹配，到规则引擎中（工作内存）查找Order对象
     then
         $order.setRealPrice($order.getOriginalPrice() - 50);
-        System.out.println("book_discount_3");
+        System.out.println("成功匹配到规则三");
 end
 
-
-
-## 规则四 购买图书总价在 400 以上，优惠 100
+//所购图书总价在300元以上的优惠100元
 rule "book_discount_4"
     when
-        $order:Order( originalPrice >=300)
+        $order:Order(originalPrice >= 300) //模式匹配，到规则引擎中（工作内存）查找Order对象
     then
         $order.setRealPrice($order.getOriginalPrice() - 100);
-        System.out.println("book_discount_4");
+        System.out.println("成功匹配到规则四");
 end
