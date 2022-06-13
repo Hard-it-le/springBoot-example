@@ -43,3 +43,8 @@
 /Drools/Drools/target/
 /Drools.iml
 /springboot-example.iml
+/Drools/springboot-drools/springboot-drools/mvnw.cmd
+/Drools/springboot-drools/springboot-drools/mvnw
+/Drools/springboot-drools/springboot-drools/.mvn/
+/.gradle/
+/.idea/
