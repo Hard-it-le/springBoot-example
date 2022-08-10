@@ -3,10 +3,11 @@ server:
 
 spring:
   datasource:
-    type: com.mysql.cj.jdbc.MysqlDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: dockerroot
     url: jdbc:mysql://127.0.0.1:13306/sp_blog?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     database: mysql
