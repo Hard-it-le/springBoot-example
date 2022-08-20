@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Future;
 
 /**
  * @program: springboot-example
@@ -46,7 +47,7 @@ public class Producer02 {
             );
 
             // 消息的异步确认
-            producer.send(record, new Callback() {
+            Future<RecordMetadata> send = producer.send(record, new Callback() {
                 @Override
                 public void onCompletion(RecordMetadata metadata, Exception exception) {
                     if (exception == null) {
@@ -58,6 +59,8 @@ public class Producer02 {
                     }
                 }
             });
+
+            send.get();
         }
 
         // 关闭生产者

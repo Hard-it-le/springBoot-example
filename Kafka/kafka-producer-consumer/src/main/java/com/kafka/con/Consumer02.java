@@ -1,6 +1,7 @@
 package com.kafka.con;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
@@ -9,6 +10,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * @program: springboot-example
@@ -43,16 +45,16 @@ public class Consumer02 {
             final ConsumerRecords<Integer, String> consumerRecords = consumer.poll(3_000);
 
             // 遍历本次从主题的分区拉取的批量消息
-//            consumerRecords.forEach(new Consumer<ConsumerRecord<Integer, String>>() {
-//                @Override
-//                public void accept(ConsumerRecord<Integer, String> record) {
-//                    System.out.println(record.topic() + "\t"
-//                            + record.partition() + "\t"
-//                            + record.offset() + "\t"
-//                            + record.key() + "\t"
-//                            + record.value());
-//                }
-//            });
+            consumerRecords.forEach(new Consumer<ConsumerRecord<Integer, String>>() {
+                @Override
+                public void accept(ConsumerRecord<Integer, String> record) {
+                    System.out.println(record.topic() + "\t"
+                            + record.partition() + "\t"
+                            + record.offset() + "\t"
+                            + record.key() + "\t"
+                            + record.value());
+                }
+            });
         }
 
 //        consumer.close();

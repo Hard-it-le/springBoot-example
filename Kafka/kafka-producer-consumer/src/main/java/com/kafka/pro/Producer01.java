@@ -41,10 +41,10 @@ public class Producer01 {
          * value ： 发送的值
          */
         ProducerRecord<Integer, String> record = new ProducerRecord<>(
-                "kafka_topic_api_1",
+                "producer_1",
                 0,
-                0,
-                "hello java test 1"
+                1,
+                "hello java test 2"
         );
 
         // 消息的同步确认
