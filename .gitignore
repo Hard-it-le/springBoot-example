@@ -50,3 +50,7 @@
 /.idea/
 /Drools/springboot-drools/mvnw
 /Drools/springboot-drools/mvnw.cmd
+/**/.mvn/
+/**/mvnw
+/**/mvnw.cmd
+
